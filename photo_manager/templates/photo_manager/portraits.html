@@ -1,0 +1,68 @@
+{% extends 'photo_manager/base.html' %}
+
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{% static 'photo_manager/css/jquery.mThumbnailScroller.css' %}">
+{% endblock head %}
+
+{% block content %}
+<div id="subpicture-wrapper">
+	<div class="middle-container">
+		<div class="box">
+			<div class="header cl-effect-162">
+				<h1 data-hover="Nature">Portraits</h1>
+			</div>
+			<div id="full-image" class="box">
+				<img src="{{ portraits.0.image.url }}" />
+			</div>
+			<div class="thumb-container">
+				<div id="thumb-list-1" class="thumb-list">
+				  <ul>
+				  	{% for item in portraits %}
+				  	{% if item.cover %}
+				    <li><a><img class="thumb-nail active" src="{{ item.image.url }}" /></a></li>
+				    {% else %}
+				    <li><img class="thumb-nail" src="{{ item.image.url }}" /></a></li>
+				    {% endif %}
+				    {% endfor %}
+				  </ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock content %}
+{% block script %}
+<script type="text/javascript" src="{% static 'photo_manager/js/jquery.mThumbnailScroller.min.js' %}"></script>
+
+<script>
+    (function($){
+        $(window).load(function(){
+            $("#thumb-list-1").mThumbnailScroller({
+              axis:"x",
+              theme:"buttons-out",
+            });
+        });
+    })(jQuery);
+
+    $(document).ready(function() {
+    		
+    	$(".thumb-nail").click(function() {
+    		var imageContainer = document.getElementById("full-image");
+    		var image = $('#full-image img');
+    		if (!$(this).hasClass("active")) {	
+    			newImage = $(this);
+    			$(image).fadeOut("slow", function() {
+    				$("img", imageContainer).replaceWith($(newImage).clone().removeClass("thumb-nail"));
+    				$('#full-image img').css({display:'none'}).fadeIn('slow');
+    			});
+    			var activeClass = document.getElementsByClassName("active");
+    			$(activeClass).removeClass("active");
+    			$(this).addClass("active");			
+    		}
+    		return false;
+		});
+    });
+</script>
+{% endblock script %}

@@ -1,0 +1,92 @@
+{% load static %}
+
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>{% block title %} Ben Park Photography {% endblock title %}</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="{% static 'photo_manager/css/main.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'photo_manager/css/Font-Awesome-master/css/font-awesome.min.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'photo_manager/css/CreativeLinkEffects/css/component.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'photo_manager/css/CreativeLinkEffects/css/normalize.css' %}">
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+	{% block head %}
+</head>
+{% endblock head %}
+
+<body lang="en">
+
+{% block page-wrapper %}
+<div id="page-wrapper">
+{% endblock page-wrapper %}
+	{% block nav %} 
+	<nav class="navbar navbar-default" role="navigation">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNav">
+				<span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span> 
+    		</button>
+			<a class="navbar-brand"href="/"></a>
+		</div>
+		<div>
+			<div class="menu-main-menu-container">
+				<ul class="nav navbar-nav navbar-right collapse navbar-collapse cl-effect-16" id="myNav">
+					<li class="nav-item"><a href="/about" data-hover="About">About</a></li>
+	   				<li class="nav-item"><a href="/photography" data-hover="Photography">Photography</a></li>
+					<li class="nav-item"><a href="/portfolio" data-hover="Portfolio">Portfolio</a></li>
+					<li class="nav-item"><a href="mailto:ryanshiau1@gmail.com"><span class="fa fa-envelope-square social-media"></span></a></li>
+					<li class="nav-item"><a href=""><span class="fa fa-facebook-square social-media"></span></a></li>
+					<li class="nav-item"><a href="https://instagram.com/benjamin_park.99/" target="_blank"><span class="fa fa-instagram social-media"></span></a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	{% endblock nav %}
+
+	{% block content %}
+	{% endblock content %}
+
+	{% block contact %}
+	<div class="contact-wrapper">
+		<div class="container">
+			<div class="contact-container">
+				<p class="copyright">© 2020 BEN PARK PHOTOGRAPHY</p>
+			</div>
+		</div>
+	</div>
+	{% endblock contact %}
+</div>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script type="text/javascript" src="{% static 'photo_manager/js/bootstrap.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'photo_manager/css/CreativeLinkEffects/js/modernizr.custom.js' %}"></script>
+<script>
+	$(window).resize(function() {
+		var nav_item = document.querySelector(".navbar-nav");
+		var nav_item_2 = document.querySelector(".navbar-collapse");
+		if ($(window).width() <= 767) {
+			nav_item.style.marginLeft = 0;
+			nav_item.style.marginRight = 0;
+			nav_item_2.style.paddingLeft = 0;
+			nav_item_2.style.paddingRight = 0;
+		}
+		else {
+			nav_item.style.marginRight = 10;
+			nav_item.style.marginLeft = 10;
+			nav_item_2.style.paddingLeft = 15;
+			nav_item_2.style.paddingRight = 15;
+		}
+	});
+	$('.nav a').on('click', function(){
+	    if ($(document).width() <= 767){ 
+	 	$(".navbar-toggle").click();
+	    }
+	});
+</script>
+{% block script %}
+
+{% endblock script %}
+
+</body>
+</html>

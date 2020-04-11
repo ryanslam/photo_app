@@ -1,0 +1,23 @@
+{% extends 'photo_manager/base.html' %}
+{% load static %}
+
+{% block content %}
+<div id="about_wrapper">
+	{% for info in about_info %}
+	<div class="container biography">
+		<div class="col-md-4">
+			<div id="about-image-container">
+				<img id="imageframe_one" src="{{info.image1.url}}" />
+				<img id="imageframe_two" src="{{info.image2.url}}" />
+			</div>
+		</div>
+		<div class="col-md-8">
+			<div class="bio-info cl-effect-162">
+				<h1 data-hover="Ben Park">{{ info.title }}</h1>
+				<p>{{ info.body }} </p>
+			</div>
+		</div>
+	</div>
+	{% endfor %}
+</div>
+{% endblock content %}

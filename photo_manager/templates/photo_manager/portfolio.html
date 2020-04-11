@@ -1,0 +1,145 @@
+{% extends 'photo_manager/base.html' %}
+{% load static %}
+
+{% block page-wrapper %}
+<div id="portfolio-wrapper">
+{% endblock page-wrapper %}
+
+
+{% block content %}
+	<div class="anchor">
+	</div>
+	<div id='top' class="overlay">
+		<div class="container head-container">
+			<div id="portfolio-logo" class="absolute-center">
+				<h1>Ben Park Photography</h1>
+			</div>
+		</div>
+		<a href='#education' class="scroll_down smoothScroll">
+			<span class="glyphicon glyphicon-hand-down navglyphicon"></span>
+		</a>
+	</div>
+	<div class="port-arrow">
+		<ul class="port-nav">
+			<li>
+				<a href='#education' class="port-nav-item smoothScroll first active">
+					<span class="glyphicon glyphicon-user navglyphicon"></span>
+				</a>
+			</li>
+			<li>
+				<a href='#experiences' class="port-nav-item smoothScroll second">
+					<span class="glyphicon glyphicon-briefcase navglyphicon"></span>
+				</a>
+			</li>
+			<li>
+				<a href='#contact' class="port-nav-item smoothScroll third">
+					<span class="fa fa-comments navglyphicon"></span>
+				</a>
+			</li>
+		</ul>
+	</div>
+	<div class="background-white">
+		<div id="education" class="container box">
+			<div class="header cl-effect-162">
+				<h1 data-hover="Education">Education</h1>
+			</div>
+			{% for section in education %}
+			<div class="row">
+				<div class="col-md-4">
+					<p class="exp-title"><b>{{ section.name }}</b></p>
+					<p class="timespent">{{section.year_start}}-{{section.year_end}}</p>
+				</div>
+				<div class="col-md-8">
+					<p class="exp-info"><b>Location:</b> {{ section.location }}</p>
+					<p class="exp-desc">{{ section.description }}</p>
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+	<hr style="width:100%; border-color:black; margin-top: 20px;">
+	<div class="background-white">
+		<div id="experiences" class="container box">
+			<div class="header cl-effect-162">
+				<h1 data-hover="Experience">Experience</h1>
+			</div>
+			{% for section in experience %}
+			<div class="row">
+				<div class="col-md-4">
+					<p class="exp-title"><b>{{ section.name }}</b></p>
+					<p class="timespent">{{section.year_start}}-{{section.year_end}}</p>
+				</div>
+				<div class="col-md-8">
+					<p class="exp-info"><b>{{ section.position }}</b></p>
+					<p class="exp-desc">{{section.description}}</p>
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+	<hr style="width:100%; border-color:black; margin-top: 20px;">
+	<div class="background-white">
+		<div id="contact" class="container box">
+			<div class="header cl-effect-162">
+				<h1 data-hover="Contact">Contact</h1>
+			</div>
+			<div class="container contact-box">
+				<div class="contact-icons">
+					<a href="mailto:ryanshiau1@gmail.com" target="_blank"><span class="fa fa-envelope-square icon"></span></a>
+					<a href="https://www.linkedin.com/in/ryanshiau1" target="_blank"><span class="fa fa-linkedin-square icon"></span></a>
+					<a href="https://instagram.com/benjamin_park.99/" target="_blank"><span class="fa fa-instagram icon"></span></a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<hr style="width:100%; border-color:black; margin: 0px">
+
+{% endblock content %}
+
+</div> 
+{% block script %}
+<script type="text/javascript" src="{% static 'photo_manager/js/smoothscroll.js' %}"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		var s = $(".scroll_down");
+		var pos = s.position();
+		$(window).scroll(function() {
+			var windowpos = $(window).scrollTop();
+			var top = pos.top;
+			if (windowpos >= top) {
+				$(".port-nav").addClass("stick");
+			}
+			else {
+				$(".port-nav").removeClass("stick");
+			}
+		});
+		var about = $("#education");
+		var experiences = $("#experiences");
+		var contact = $("#contact");
+		$(window).scroll(function() {
+			var windowpos = $(window).scrollTop();
+			var educationpos = about.position();
+			var experiencespos = experiences.position();
+			var contactpos = contact.position();
+			if (windowpos >= educationpos.top && windowpos - 10 < experiencespos.top) {
+				$(".first").addClass("active");
+				$(".port-nav-item").not($(".first")).removeClass("active");
+			}
+			if (windowpos + 10 >= experiencespos.top && windowpos - 10 < contactpos.top) {
+				$(".second").addClass("active");
+				$(".port-nav-item").not($(".second")).removeClass("active");
+			}
+			else {
+				$(".second").removeClass("active");
+			}
+			if (windowpos + 10 >= contactpos.top) {
+				$(".third").addClass("active");
+				$(".port-nav-item").not($(".third")).removeClass("active");
+			}
+			else {
+				$(".third").removeClass("active");
+			}
+		});
+	})
+</script>
+{% endblock script %}

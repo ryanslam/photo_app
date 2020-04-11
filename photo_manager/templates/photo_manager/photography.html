@@ -1,0 +1,146 @@
+{% extends 'photo_manager/base.html' %}
+{% load static %}
+
+{% block content %}
+<div id="photography_wrapper">
+	<div class="container">
+		<ul class="photo-grid">
+			<div class="about-header">
+				<div class="header cl-effect-162">
+					<h1 data-hover="photography">Photography</h1>
+				</div>
+			</div>
+			{% for photo in weddings %}
+			{% if photo.cover %}
+			<div class="col-md-4">
+				<li>
+					<a href="/weddings">
+						<figure>
+							<img src="{{photo.image.url}}">
+							<figcaption><p>{{ photo.category }}</p></figcaption>
+						</figure>
+					</a>
+				</li>
+			</div>
+			{% endif %}
+			{% endfor %}
+			{% for photo in cars %}
+			{% if photo.cover %}
+			<div class="col-md-4">
+				<li>
+					<a href="/cars">
+						<figure>
+							<img src="{{ photo.image.url }}">
+							<figcaption><p>{{ photo.category }}</p></figcaption>
+						</figure>
+					</a>
+				</li>
+			</div>
+			{% endif %}
+			{% endfor %}
+			{% for photo in models %}
+			{% if photo.cover %}
+			<div class="col-md-4">
+				<li>
+					<a href="/models">
+						<figure>
+							<img src="{{ photo.image.url }}">
+							<figcaption><p>{{ photo.category }}</p></figcaption>
+						</figure>
+					</a>
+				</li>
+			</div>
+			{% endif %}
+			{% endfor %}
+			{% for photo in events %}
+			{% if photo.cover %}
+			<div class="col-md-4">
+				<li>
+					<a href="/events">
+						<figure>
+							<img src="{{ photo.image.url }}">
+							<figcaption><p>{{ photo.category }}</p></figcaption>
+						</figure>
+					</a>
+				</li>
+			</div>
+			{% endif %}
+			{% endfor %}
+			{% for photo in landscapes %}
+			{% if photo.cover %}
+			<div class="col-md-4">
+				<li>
+					<a href="/landscapes">
+						<figure>
+							<img src="{{ photo.image.url }}">
+							<figcaption><p>{{ photo.category }}</p></figcaption>
+						</figure>
+					</a>
+				</li>
+			</div>
+			{% endif %}
+			{% endfor %}
+			{% for photo in visual_communication %}
+			{% if photo.cover %}
+			<div class="col-md-4">
+				<li>
+					<a href="/art">
+						<figure>
+							<img src="{{ photo.image.url }}">
+							<figcaption><p>{{ photo.category }}</p></figcaption>
+						</figure>
+					</a>
+				</li>
+			</div>
+			{% endif %}
+			{% endfor %}
+			{% for photo in product_design %}
+			{% if photo.cover %}
+			<div class="col-md-4">
+				<li>
+					<a href="/design">
+						<figure>
+							<img src="{{ photo.image.url }}">
+							<figcaption><p>{{ photo.category }}</p></figcaption>
+						</figure>
+					</a>
+				</li>
+			</div>
+			{% endif %}
+			{% endfor %}
+			{% for photo in portraits %}
+			{% if photo.cover %}
+			<div class="col-md-4">
+				<li>
+					<a href="/portraits">
+						<figure>
+							<img src="{{ photo.image.url }}">
+							<figcaption><p>{{ photo.category }}</p></figcaption>
+						</figure>
+					</a>
+				</li>
+			</div>
+			{% endif %}
+			{% endfor %}
+			{% for photo in nature %}
+			{% if photo.cover %}
+			<div class="col-md-4">
+				<li>
+					<a href="/nature">
+						<figure>
+							<img src="{{ photo.image.url }}">
+							<figcaption><p>{{ photo.category }}</p></figcaption>
+						</figure>
+					</a>
+				</li>
+			</div>
+			{% endif %}
+			{% endfor %}
+		</ul>
+	</div>
+</div>
+				
+		
+{% endblock content %}
+
+
