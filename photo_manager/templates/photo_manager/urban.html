@@ -11,15 +11,15 @@
 	<div class="middle-container">
 		<div class="box">
 			<div class="header cl-effect-162">
-				<h1 data-hover="Events">Events</h1>
+				<h1 data-hover="Urban">Urban</h1>
 			</div>
 			<div id="full-image" class="box">
-				<img src="{{ events.0.image.url }}" />
+				<img src="{{ urban.0.image.url }}" />
 			</div>
 			<div class="thumb-container">
 				<div id="thumb-list-1" class="thumb-list">
 				  <ul>
-				  	{% for item in events %}
+				  	{% for item in urban %}
 				  	{% if item.cover %}
 				    <li><a><img class="thumb-nail active" src="{{ item.image.url }}" /></a></li>
 				    {% else %}

@@ -11,7 +11,7 @@
 	<div class="middle-container">
 		<div class="box">
 			<div class="header cl-effect-162">
-				<h1 data-hover="Design">Design</h1>
+				<h1 data-hover="Product Design">Product Design</h1>
 			</div>
 			<div id="full-image" class="box">
 				<img src="{{ product_design.0.image.url }}" />
@@ -23,7 +23,7 @@
 				  	{% if item.cover %}
 				    <li><a><img class="thumb-nail active" src="{{ item.image.url }}" /></a></li>
 				    {% else %}
-				    <li><a><img class="thumb-nail" src="{{ item.image.url }}" /></a></li>
+				    <li><img class="thumb-nail" src="{{ item.image.url }}" /></a></li>
 				    {% endif %}
 				    {% endfor %}
 				  </ul>

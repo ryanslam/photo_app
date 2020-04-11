@@ -23,86 +23,86 @@ class AboutView(generic.ListView):
 
 
 def PhotographyView(request):
-    weddings = PhotographyPhoto.objects.filter(category="Weddings")
-    cars = PhotographyPhoto.objects.filter(category="Cars")
-    models = PhotographyPhoto.objects.filter(category="Models")
-    events = PhotographyPhoto.objects.filter(category="Events")
-    landscapes = PhotographyPhoto.objects.filter(category="Landscapes")
-    visual_communication = PhotographyPhoto.objects.filter(category="Visual Communication")
-    product_design = PhotographyPhoto.objects.filter(category="Product Design")
+    ocean = PhotographyPhoto.objects.filter(category="Ocean")
+    gadgets = PhotographyPhoto.objects.filter(category="Gadgets")
+    sky = PhotographyPhoto.objects.filter(category="Sky")
+    wildlife = PhotographyPhoto.objects.filter(category="Wildlife")
     portraits = PhotographyPhoto.objects.filter(category="Portraits")
-    nature = PhotographyPhoto.objects.filter(category="Nature")
+    urban = PhotographyPhoto.objects.filter(category="Urban")
+    product_design = PhotographyPhoto.objects.filter(category="Product Design")
+    forest = PhotographyPhoto.objects.filter(category="Forest")
+    flower = PhotographyPhoto.objects.filter(category="Flower")
 
     return render(request, "photo_manager/photography.html", {
-        'weddings': weddings,
-        'cars': cars,
-        'models': models,
-        'events': events,
-        'landscapes': landscapes,
-        'visual_communication': visual_communication,
+        'ocean': ocean,
+        'gadgets': gadgets,
+        'sky': sky,
+        'wildlife': wildlife,
+        'urban': urban,
+        'forest': forest,
         'product_design': product_design,
         'portraits': portraits,
-        'nature': nature,
+        'flower': flower,
     })
 
 
-def WeddingView(request):
-    weddings = PhotographyPhoto.objects.filter(category="Weddings")
+def ocean_view(request):
+    ocean = PhotographyPhoto.objects.filter(category="Ocean")
 
-    return render(request, "photo_manager/weddings.html", {
-        'weddings': weddings
+    return render(request, "photo_manager/ocean.html", {
+        'ocean': ocean
     })
 
 
-def CarsView(request):
-    cars = PhotographyPhoto.objects.filter(category="Cars")
+def gadgets_view(request):
+    gadgets = PhotographyPhoto.objects.filter(category="Gadgets")
 
-    return render(request, "photo_manager/cars.html", {
-        'cars': cars
+    return render(request, "photo_manager/gadgets.html", {
+        'gadgets': gadgets
     })
 
 
-def ModelsView(request):
-    models = PhotographyPhoto.objects.filter(category="Models")
+def sky_view(request):
+    sky = PhotographyPhoto.objects.filter(category="Sky")
 
-    return render(request, "photo_manager/models.html", {
-        'models': models
+    return render(request, "photo_manager/sky.html", {
+        'sky': sky
     })
 
 
-def EventsView(request):
-    events = PhotographyPhoto.objects.filter(category="Events")
+def wildlife_view(request):
+    wildlife = PhotographyPhoto.objects.filter(category="Wildlife")
 
-    return render(request, "photo_manager/events.html", {
-        'events': events
+    return render(request, "photo_manager/wildlife.html", {
+        'wildlife': wildlife
     })
 
 
-def LandscapesView(request):
-    landscapes = PhotographyPhoto.objects.filter(category="Landscapes")
+def forest_view(request):
+    forest = PhotographyPhoto.objects.filter(category="Forest")
 
-    return render(request, "photo_manager/landscapes.html", {
-        'landscapes': landscapes
+    return render(request, "photo_manager/forest.html", {
+        'forest': forest
     })
 
 
-def VisualCommunicationView(request):
-    visual_communication = PhotographyPhoto.objects.filter(category="Visual Communication")
+def urban_view(request):
+    urban = PhotographyPhoto.objects.filter(category="Urban")
 
-    return render(request, "photo_manager/art.html", {
-        'visual_communication': visual_communication
+    return render(request, "photo_manager/urban.html", {
+        'urban': urban
     })
 
 
-def ProductDesignView(request):
+def product_design_view(request):
     product_design = PhotographyPhoto.objects.filter(category="Product Design")
 
-    return render(request, "photo_manager/design.html", {
+    return render(request, "photo_manager/product_design.html", {
         'product_design': product_design
     })
 
 
-def PortraitView(request):
+def portrait_view(request):
     portrait = PhotographyPhoto.objects.filter(category="Portraits")
 
     return render(request, "photo_manager/portraits.html", {
@@ -110,11 +110,11 @@ def PortraitView(request):
     })
 
 
-def NatureView(request):
-    nature = PhotographyPhoto.objects.filter(category="Nature")
+def flower_view(request):
+    flower = PhotographyPhoto.objects.filter(category="Flower")
 
-    return render(request, "photo_manager/nature.html", {
-        'nature': nature
+    return render(request, "photo_manager/flower.html", {
+        'flower': flower
     })
 
 
