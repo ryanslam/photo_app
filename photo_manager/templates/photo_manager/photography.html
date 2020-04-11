@@ -10,11 +10,11 @@
 					<h1 data-hover="photography">Photography</h1>
 				</div>
 			</div>
-			{% for photo in weddings %}
+			{% for photo in ocean %}
 			{% if photo.cover %}
 			<div class="col-md-4">
 				<li>
-					<a href="/weddings">
+					<a href="/ocean">
 						<figure>
 							<img src="{{photo.image.url}}">
 							<figcaption><p>{{ photo.category }}</p></figcaption>
@@ -24,11 +24,11 @@
 			</div>
 			{% endif %}
 			{% endfor %}
-			{% for photo in cars %}
+			{% for photo in gadgets %}
 			{% if photo.cover %}
 			<div class="col-md-4">
 				<li>
-					<a href="/cars">
+					<a href="/gadgets">
 						<figure>
 							<img src="{{ photo.image.url }}">
 							<figcaption><p>{{ photo.category }}</p></figcaption>
@@ -38,11 +38,11 @@
 			</div>
 			{% endif %}
 			{% endfor %}
-			{% for photo in models %}
+			{% for photo in sky %}
 			{% if photo.cover %}
 			<div class="col-md-4">
 				<li>
-					<a href="/models">
+					<a href="/sky">
 						<figure>
 							<img src="{{ photo.image.url }}">
 							<figcaption><p>{{ photo.category }}</p></figcaption>
@@ -52,53 +52,11 @@
 			</div>
 			{% endif %}
 			{% endfor %}
-			{% for photo in events %}
+			{% for photo in wildlife %}
 			{% if photo.cover %}
 			<div class="col-md-4">
 				<li>
-					<a href="/events">
-						<figure>
-							<img src="{{ photo.image.url }}">
-							<figcaption><p>{{ photo.category }}</p></figcaption>
-						</figure>
-					</a>
-				</li>
-			</div>
-			{% endif %}
-			{% endfor %}
-			{% for photo in landscapes %}
-			{% if photo.cover %}
-			<div class="col-md-4">
-				<li>
-					<a href="/landscapes">
-						<figure>
-							<img src="{{ photo.image.url }}">
-							<figcaption><p>{{ photo.category }}</p></figcaption>
-						</figure>
-					</a>
-				</li>
-			</div>
-			{% endif %}
-			{% endfor %}
-			{% for photo in visual_communication %}
-			{% if photo.cover %}
-			<div class="col-md-4">
-				<li>
-					<a href="/art">
-						<figure>
-							<img src="{{ photo.image.url }}">
-							<figcaption><p>{{ photo.category }}</p></figcaption>
-						</figure>
-					</a>
-				</li>
-			</div>
-			{% endif %}
-			{% endfor %}
-			{% for photo in product_design %}
-			{% if photo.cover %}
-			<div class="col-md-4">
-				<li>
-					<a href="/design">
+					<a href="/wildlife">
 						<figure>
 							<img src="{{ photo.image.url }}">
 							<figcaption><p>{{ photo.category }}</p></figcaption>
@@ -122,11 +80,53 @@
 			</div>
 			{% endif %}
 			{% endfor %}
-			{% for photo in nature %}
+			{% for photo in urban %}
 			{% if photo.cover %}
 			<div class="col-md-4">
 				<li>
-					<a href="/nature">
+					<a href="/urban">
+						<figure>
+							<img src="{{ photo.image.url }}">
+							<figcaption><p>{{ photo.category }}</p></figcaption>
+						</figure>
+					</a>
+				</li>
+			</div>
+			{% endif %}
+			{% endfor %}
+			{% for photo in product_design %}
+			{% if photo.cover %}
+			<div class="col-md-4">
+				<li>
+					<a href="/product_design">
+						<figure>
+							<img src="{{ photo.image.url }}">
+							<figcaption><p>{{ photo.category }}</p></figcaption>
+						</figure>
+					</a>
+				</li>
+			</div>
+			{% endif %}
+			{% endfor %}
+			{% for photo in forest %}
+			{% if photo.cover %}
+			<div class="col-md-4">
+				<li>
+					<a href="/forest">
+						<figure>
+							<img src="{{ photo.image.url }}">
+							<figcaption><p>{{ photo.category }}</p></figcaption>
+						</figure>
+					</a>
+				</li>
+			</div>
+			{% endif %}
+			{% endfor %}
+			{% for photo in flower %}
+			{% if photo.cover %}
+			<div class="col-md-4">
+				<li>
+					<a href="/flower">
 						<figure>
 							<img src="{{ photo.image.url }}">
 							<figcaption><p>{{ photo.category }}</p></figcaption>
